@@ -11,8 +11,11 @@ using Microsoft::WRL::ComPtr;
 #define ThrowIfFailed(hr) _ThrowIfFailed(hr, __FILEW__, __LINE__)
 
 // FORWARD DECLARATION
-void _ThrowIfFailed(HRESULT hr, const wchar_t* const filename, int line);
+void                        _ThrowIfFailed(HRESULT hr, const wchar_t* const filename, int line);
+HWND                        InfernoCreateWindow(HINSTANCE hInst, INT width, INT height, PWSTR className, PWSTR title);
 
+
+IDXGIAdapter1* GetHardwareAdapter(IDXGIFactory4* Factory, DXGI_GPU_PREFERENCE preference);
 // CLASS DEFINITIONS
 class HR_EXCEPTION
 {
